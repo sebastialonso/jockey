@@ -7,9 +7,10 @@ defmodule Jockey.MixProject do
       version: "0.1.0",
       elixir: "~> 1.6",
       start_permanent: Mix.env() == :prod,
-      description: description()
-      deps: deps()
-    ] ++ package()
+      description: description(),
+      deps: deps(),
+      package: package()
+    ]
   end
 
   # Run "mix help compile.app" to learn about applications.
@@ -27,7 +28,7 @@ defmodule Jockey.MixProject do
 
   defp package do
     [
-      files: ["lib", "mix.exs", "README.md", "LICENSE"],
+      files: ["lib", "mix.exs", "README.md"],
       maintainers: ["Sebastián González"],
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/sebastialonso/jockey"}
@@ -39,6 +40,7 @@ defmodule Jockey.MixProject do
     [
       {:decorator, "~> 1.3.0"},
       {:plug_cowboy, "~> 2.0.1"},
+      {:ex_doc, "~> 0.18.0", only: :dev},
       {:tesla, "~> 1.2.1"},
       {:mock, "~> 0.3.0", only: :test}
       # {:dep_from_hexpm, "~> 0.3.0"},

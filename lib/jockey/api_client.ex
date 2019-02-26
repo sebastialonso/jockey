@@ -34,7 +34,7 @@ defmodule Jockey.ApiClient do
   end
 
   def users_api_url do
-    case Support.user_api_url() do
+    case Support.users_api_url() do
       nil ->
         "http://no_host_defined_in_config"
       url ->
